@@ -13,18 +13,23 @@
 
 int main()
 {
-    float *pu;    // deklarasi pointer 'pu' dengan tipe variabel float
-    float nu;     // deklarasi variabel biasa 'nu' dengan tipe float
-    int u = 1234; // deklarasi variabel 'u' bertipe integer dan mengisi nilainya dengan 1234
+    float *px;    // deklarasi pointer 'px' dengan tipe variabel float
+    float y;     // deklarasi variabel biasa 'y' dengan tipe float
+    int x = 1234; // deklarasi variabel 'x' bertipe integer dan mengisi nilainya dengan 1234
     
-    pu = &u;      // SALAH: Pointer float 'pu' menunjuk ke alamat variabel integer 'u'. Tipe data tidak cocok.
-    nu = *pu;     // Mengambil nilai integer dari 'u', tapi dibaca menggunakan variabel bertipe float itu akan menghasilkan nilai yang error
+    px = &x;      // SALAH: Pointer float 'px' menunjuk ke alamat variabel integer 'x'. Tipe data tidak cocok.
+    y = *px;     // Mengambil nilai integer dari 'x', tapi dibaca menggunakan variabel bertipe float itu akan menghasilkan nilai yang error
     
-    printf("u = %d\n", u);   // Mencetak nilai 'u' sebagai integer (Berhasil: 1234)
-    printf("nu = %f\n", nu); // Mencetak nilai 'nu' sebagai float (error, menghasilkan 0.000000)
-    
+    printf("u = %d\n", x);   // Mencetak nilai 'x' sebagai integer 
+    printf("y = %f\n", y); // Mencetak nilai 'nu' sebagai float 
+    printf("alamat y = %p\n", &y);
     return 0; // Mengakhiri program dengan status sukses
 }
 
-// HASIL u 1234
-// HASIL nu 0.000000
+/*tracing :
+px = diisi dengan ALAMAT MEMORI dari variabel x
+y = diisi dengan NILAI yang berada di alamat memori yang ditunjuk oleh px (proses dereference)
+x = 1234
+y = 0,0000 (Karena px adalah pointer float,ia membaca biner integer 1234 dengan standar pecahan float.
+    Pola biner tersebut terbaca sebagai angka yang sangat kecil mendekati nol sehingga dibulatkan menjadi 0.000000.  tidak cocok tipe data).
+alamat y =  0061FF18, ini adalah alamat y*/ 
