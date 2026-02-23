@@ -14,8 +14,8 @@ int main()
 {
 float d, *pd; //deklarasi variabel dan pointer
 d = 54.5; // mengisi d dengan 54.5
-printf("Isi d semula = %g\n", d); //%g ialah untuk menyederhanakan nilai variabel float dan double, misal variabel float a = 25.500, dengan pakai %g, menjadi 25.5
-pd = &d; // pd mengambil alamat dari d, dengan nilai 54.5
+printf("Isi d semula = %g\n", d); //%g ialah untuk membuang angka nol yang tidak terpakai pada nilai variabel float dan double, misal variabel float a = 25.500, dengan pakai %g, menjadi 25.5
+pd = &d; // pd mengambil nilai dari alamat memori d, dengan nilai 54.5
 *pd = *pd + 10; // Nilai yang ditunjuk oleh pointer pd (yaitu 54.5) ditambah 10, lalu hasilnya (64.5) ditimpa kembali ke alamat tersebut.
 printf("Isi d kini = %g\n", d); //sama seperti sebelumnya, %g ialah untuk menyederhanakan nilai variabel float dan double
 return 0; // mengembalikan nilai 0 = berhasil
